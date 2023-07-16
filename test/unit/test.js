@@ -6,7 +6,7 @@ describe('Hi! API Endpoint', () => {
         try{
             const response = await request({
                 method: 'GET',
-                uri: 'https://10.64.112.2.nip.io/REVERSE-proxy',
+                uri: 'https://10.64.112.2/REVERSE-proxy',
                 json: true
             });
             console.log(response)
