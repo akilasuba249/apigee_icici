@@ -34,12 +34,12 @@ pipeline {
                         sh "npm install"
                         //sh "npm test test/unit/*.js"
                         sh "npm run coverage"
-                    } catch (e) {
-                        throw e
-                    } finally {
-                        sh "cd coverage && cp cobertura-coverage.xml $WORKSPACE"
-                        step([$class: 'CoberturaPublisher', coberturaReportFile: 'cobertura-coverage.xml'])
-                    }
+                    } //catch (e) {
+                        //throw e
+                    //} finally {
+                        //sh "cd coverage && cp cobertura-coverage.xml $WORKSPACE"
+                        //step([$class: 'CoberturaPublisher', coberturaReportFile: 'cobertura-coverage.xml'])
+                   // }
                 }
             }
         }
