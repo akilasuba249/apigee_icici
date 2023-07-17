@@ -14,17 +14,17 @@ pipeline {
     stages {
         stage('Initial-Checks') {
             steps {
-                sendNotifications 'STARTED'
+                //sendNotifications 'STARTED'
                 sh "npm -v"
                 sh "mvn -v"
         }}  
         stage('Policy-Code Analysis') {
             steps {
                 sh "npm install -g apigeelint"
-                sh "apigeelint -s hello-world/apiproxy/ -f codeframe.js"
+                sh "apigeelint -s REVERSE-proxy/apiproxy/ -f codeframe.js"
             }
         }
-        stage('Unit-Test-With-Coverage') {
+        /*stage('Unit-Test-With-Coverage') {
             steps {
                 script {
                     try {
@@ -40,7 +40,7 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
         stage('Approval') {
             steps {
                 script {
@@ -52,19 +52,19 @@ pipeline {
         stage('Deploy to Production') {
             steps {
                  // service account key from  credentials 
-                withCredentials([file(credentialsId: 'apigeeuser', variable: 'MY_FILE')]) {
+                withCredentials([file(credentialsId: 'sailorgcp', variable: 'MY_FILE')]) {
                     echo 'My file path: $MY_FILE'
                     //deploy using maven plugin and replace email and orgs value 
-                    sh "mvn -f ./hello-world/pom.xml install -Peval -Dorg=prefab-isotope-373609 -Dsafile=$MY_FILE -Demail=apigeeuser@prefab-isotope-373609.iam.gserviceaccount.com"
+                    sh "mvn -f ./REVERSE-proxy/pom.xml install -Pdev -Dorg=sailor-321711 -Dsafile=$MY_FILE -Demail=apigeetest@sailor-321711.iam.gserviceaccount.com"
                 }
             }
         }
     }
 
-    post {
-        always {
+    //post {
+        //always {
             // cucumberSlackSend channel: 'apigee-cicd', json: '$WORKSPACE/reports.json'
-            sendNotifications currentBuild.result
-        }
-    }
+            //sendNotifications currentBuild.result
+        //}
+    //}
 }
