@@ -22,6 +22,9 @@ pipeline {
             steps {
                 sh "npm install -g apigeelint"
                 sh "apigeelint -s iciciproxy/apiproxy/ -f codeframe.js"
+                sh "apigeelint -s security/sharedflowbundle/ -f codeframe.js"
+
+
             }
         }
         /*stage('Unit-Test-With-Coverage') {
