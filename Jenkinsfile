@@ -26,7 +26,7 @@ pipeline {
 
             }
         }
-        /*stage('Unit-Test-With-Coverage') {
+        stage('Unit-Test-With-Coverage') {
             steps {
                 script {
                     try {
@@ -42,7 +42,7 @@ pipeline {
                     }
                 }
             }
-        }*/
+        }
         stage('Approval') {
             steps {
                 script {
