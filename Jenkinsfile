@@ -24,7 +24,6 @@ pipeline {
                 sh "apigeelint -s iciciproxy/apiproxy/ -f codeframe.js"
                 sh "apigeelint -s security/sharedflowbundle/ -f codeframe.js"
 
-
             }
         }
         /*stage('Unit-Test-With-Coverage') {
@@ -49,6 +48,16 @@ pipeline {
                 script {
                     def approval = input message: 'Approve to deploy in production', ok: 'Approve'
                     echo "Approval: ${approval}"
+                }
+            }
+        }
+        stage('SharedFlow deployment') {
+            steps {
+                 // service account key from  credentials 
+                withCredentials([file(credentialsId: 'sailorgcp', variable: 'MY_FILE')]) {
+                    echo 'My file path: $MY_FILE'
+                    //deploy using maven plugin and replace email and orgs value 
+                    sh "mvn -f ./security/pom.xml install -Puat -Dorg=sailor-321711 -Dsafile=$MY_FILE -Demail=apigeetest@sailor-321711.iam.gserviceaccount.com"
                 }
             }
         }
