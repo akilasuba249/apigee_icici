@@ -2,5 +2,5 @@
 <FlowCallout continueOnError="false" enabled="true" name="default">
   <DisplayName>default</DisplayName>
   <Parameters/>
-  <SharedFlowBundle>default</SharedFlowBundle>
+  <SharedFlowBundle>iciciproxy-sharedflow</SharedFlowBundle>
 </FlowCallout>
