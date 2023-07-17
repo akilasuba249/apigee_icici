@@ -1,5 +1,5 @@
 {
-  "name": "REVERSE-proxy-api-proxy",
+  "name": "iciciproxy-api-proxy",
   "version": "1.0.0",
   "description": "Unit tests for Hello World API Proxy",
   "scripts": {

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="1" name="REVERSE-proxy">
-  <DisplayName>REVERSE-proxy</DisplayName>
+<APIProxy revision="1" name="iciciproxy">
+  <DisplayName>iciciproxy</DisplayName>
   <Description>An example API proxy.</Description>
   <CreatedAt>1672902181445</CreatedAt>
   <LastModifiedAt>1672902181445</LastModifiedAt>
-  <BasePaths>/REVERSE-proxy</BasePaths>
+  <BasePaths>/iciciproxy</BasePaths>
   <ProxyEndpoints>
     <ProxyEndpoint>default</ProxyEndpoint>
   </ProxyEndpoints>

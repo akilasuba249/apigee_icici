@@ -17,8 +17,8 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>apigee</groupId>
-    <artifactId>REVERSE-proxy</artifactId>
+    <artifactId>iciciproxy</artifactId>
     <version>1.0</version>
-    <name>REVERSE-proxy</name>
+    <name>iciciproxy</name>
     <packaging>pom</packaging>
 </project>

@@ -1,6 +1,6 @@
 {
   "proxies": [
-    "REVERSE-proxy"
+    "iciciproxy"
   ],
   "sharedflows": []
 }

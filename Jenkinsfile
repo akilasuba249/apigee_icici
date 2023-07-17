@@ -21,7 +21,7 @@ pipeline {
         stage('Policy-Code Analysis') {
             steps {
                 sh "npm install -g apigeelint"
-                sh "apigeelint -s REVERSE-proxy/apiproxy/ -f codeframe.js"
+                sh "apigeelint -s iciciproxy/apiproxy/ -f codeframe.js"
             }
         }
         /*stage('Unit-Test-With-Coverage') {
@@ -55,7 +55,7 @@ pipeline {
                 withCredentials([file(credentialsId: 'sailorgcp', variable: 'MY_FILE')]) {
                     echo 'My file path: $MY_FILE'
                     //deploy using maven plugin and replace email and orgs value 
-                    sh "mvn -f ./REVERSE-proxy/pom.xml install -Puat -Dorg=sailor-321711 -Dsafile=$MY_FILE -Demail=apigeetest@sailor-321711.iam.gserviceaccount.com"
+                    sh "mvn -f ./iciciproxy/pom.xml install -Puat -Dorg=sailor-321711 -Dsafile=$MY_FILE -Demail=apigeetest@sailor-321711.iam.gserviceaccount.com"
                 }
             }
         }
