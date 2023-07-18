@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations continueOnError="false" enabled="true" name="KVM-get" mapIdentifier="demoGet">
+  <DisplayName>KVM-get</DisplayName>
+  <ExclusiveCache>false</ExclusiveCache>
+  <ExpiryTimeInSecs>86400</ExpiryTimeInSecs>
+  <Get assignTo="user.name" index="1">
+    <Key>
+      <Parameter ref="user"/>
+    </Key>
+  </Get>
+  <Scope>environment</Scope>
+</KeyValueMapOperations>

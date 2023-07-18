@@ -31,16 +31,16 @@ pipeline {
                 }
             }
         }
-        // stage('SharedFlow deployment to UAT') {
-        //     steps {
-        //          // service account key from  credentials 
-        //         withCredentials([file(credentialsId: 'sailorgcp', variable: 'MY_FILE')]) {
-        //             echo 'My file path: $MY_FILE'
-        //             //deploy using maven plugin and replace email and orgs value 
-        //             sh "mvn -f ./security/pom.xml install -Puat -Dorg=sailor-321711 -Dsafile=$MY_FILE -Demail=apigeetest@sailor-321711.iam.gserviceaccount.com"
-        //         }
-        //     }
-        // }
+        stage('SharedFlow deployment to UAT') {
+            steps {
+                 // service account key from  credentials 
+                withCredentials([file(credentialsId: 'sailorgcp', variable: 'MY_FILE')]) {
+                    echo 'My file path: $MY_FILE'
+                    //deploy using maven plugin and replace email and orgs value 
+                    sh "mvn -f ./security/pom.xml install -Puat -Dorg=sailor-321711 -Dsafile=$MY_FILE -Demail=apigeetest@sailor-321711.iam.gserviceaccount.com"
+                }
+            }
+        }
         stage('Deploy to UAT') {
             steps {
                  // service account key from  credentials 
@@ -66,16 +66,16 @@ pipeline {
                   sh "npm run coverage"
             }
         }
-        // stage('SharedFlow deployment to PROD') {
-        //     steps {
-        //          // service account key from  credentials 
-        //         withCredentials([file(credentialsId: 'sailorgcp', variable: 'MY_FILE')]) {
-        //             echo 'My file path: $MY_FILE'
-        //             //deploy using maven plugin and replace email and orgs value 
-        //             sh "mvn -f ./security/pom.xml install -Puat -Dorg=sailor-321711 -Dsafile=$MY_FILE -Demail=apigeetest@sailor-321711.iam.gserviceaccount.com"
-        //         }
-        //     }
-        // }
+        stage('SharedFlow deployment to PROD') {
+            steps {
+                 // service account key from  credentials 
+                withCredentials([file(credentialsId: 'sailorgcp', variable: 'MY_FILE')]) {
+                    echo 'My file path: $MY_FILE'
+                    //deploy using maven plugin and replace email and orgs value 
+                    sh "mvn -f ./security/pom.xml install -Puat -Dorg=sailor-321711 -Dsafile=$MY_FILE -Demail=apigeetest@sailor-321711.iam.gserviceaccount.com"
+                }
+            }
+        }
         stage('Deploy to PROD') {
             steps {
                  // service account key from  credentials 

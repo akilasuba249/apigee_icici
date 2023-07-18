@@ -1,7 +1,0 @@
-<SpikeArrest async="false" continueOnError="false" enabled="true" name="quota">
-    <DisplayName>quota</DisplayName>
-    <Properties/>
-    <Identifier ref="request.header.some-header-name"/>
-    <MessageWeight ref="request.header.weight"/>
-    <Rate>3ps</Rate>
-</SpikeArrest>

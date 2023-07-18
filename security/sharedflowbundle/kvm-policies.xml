@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SharedFlowBundle revision="23" name="kvm-policies">
+  <DisplayName/>
+  <Description/>
+  <CreatedAt>1689711465167</CreatedAt>
+  <LastModifiedAt>1689711465167</LastModifiedAt>
+  <Policies>
+    <Policy>KVM-demo</Policy>
+    <Policy>AM-demo</Policy>
+    <Policy>KVM-get</Policy>
+  </Policies>
+  <SharedFlows>
+    <SharedFlow>default</SharedFlow>
+  </SharedFlows>
+  <subType>SharedFlow</subType>
+</SharedFlowBundle>
