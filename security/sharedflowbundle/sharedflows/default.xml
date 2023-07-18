@@ -9,4 +9,7 @@
   <Step>
     <Name>AM-demo</Name>
   </Step>
+  <Step>
+    <Name>SA-demo</Name>
+  </Step>
 </SharedFlow>

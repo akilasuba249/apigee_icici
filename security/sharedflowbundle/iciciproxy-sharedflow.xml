@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<SharedFlowBundle revision="23" name="kvm-policies">
+<SharedFlowBundle revision="23" name="iciciproxy-sharedflow">
   <DisplayName/>
   <Description/>
   <CreatedAt>1689711465167</CreatedAt>
@@ -8,6 +8,7 @@
     <Policy>KVM-demo</Policy>
     <Policy>AM-demo</Policy>
     <Policy>KVM-get</Policy>
+    <Policy>SA-demo</Policy>
   </Policies>
   <SharedFlows>
     <SharedFlow>default</SharedFlow>

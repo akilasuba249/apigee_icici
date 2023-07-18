@@ -2,5 +2,5 @@
 <FlowCallout continueOnError="false" enabled="true" name="FC-demo">
   <DisplayName>FC-demo</DisplayName>
   <Parameters/>
-  <SharedFlowBundle>kvm-policies</SharedFlowBundle>
+  <SharedFlowBundle>iciciproxy-sharedflow</SharedFlowBundle>
 </FlowCallout>
