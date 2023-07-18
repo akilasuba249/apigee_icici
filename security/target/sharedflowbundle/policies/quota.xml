@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Quota async="false" continueOnError="false" enabled="true" name="quota" type="calendar">
+<DisplayName>quota</DisplayName>
+<Properties/>
+<Allow count="5"/>
+<Interval>60</Interval>
+<Distributed>false</Distributed>
+<Synchronous>false</Synchronous>
+<TimeUnit ref="request.header.quota_timeout">month</TimeUnit>
+<StartTime>2023-07-18 1:00:00</StartTime>
+<AsynchronousConfiguration>
+<SyncIntervalInSeconds>60</SyncIntervalInSeconds>
+<SyncMessageCount>5</SyncMessageCount>
+</AsynchronousConfiguration>
+</Quota>
