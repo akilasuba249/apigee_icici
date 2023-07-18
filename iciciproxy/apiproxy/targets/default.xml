@@ -10,6 +10,6 @@
     <Response/>
   </PostFlow>
   <HTTPTargetConnection>
-    <URL>https://mocktarget.apigee.net/user</URL>
-  </HTTPTargetConnection>
+    <URL>https://jsonplaceholder.typicode.com/comments</URL>
+  </HTTPTargetConnection> 
 </TargetEndpoint>
