@@ -61,9 +61,19 @@ pipeline {
         }
         stage('Unit-Test-With-Coverage') {
             steps {
-                  sh "npm install request-promise"
-                  sh "npm install"
-                  sh "npm run coverage"
+                script {
+                    try {
+                        sh "npm install request-promise"
+                        sh "npm install"
+                        sh "npm test test/unit/*.js"
+                        sh "npm run coverage"
+                    } catch (e) {
+                        throw e
+                    } finally {
+                        sh "cd coverage && cp cobertura-coverage.xml $WORKSPACE"
+                        step([$class: 'CoberturaPublisher', coberturaReportFile: 'cobertura-coverage.xml'])
+                    }
+                }
             }
         }
         stage('SharedFlow deployment to PROD') {
