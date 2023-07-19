@@ -6,7 +6,7 @@ describe('Hello, Guest! API Endpoint', () => {
         try{
             const response = await request({
                 method: 'GET',
-                uri: 'https://34.36.188.6.nip.io/iciciproxy',
+                uri: 'https://34.36.188.6.nip.io/iciciproxy1',
                 json: true
             });
             console.log(response)
