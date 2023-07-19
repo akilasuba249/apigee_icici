@@ -62,9 +62,10 @@ pipeline {
             steps {
                 script {
                     try {
+                       sh "npm install request-promise"
                         sh "npm install"
                         sh "npm test test/unit/*.js"
-                        sh "npm run coverage test/unit/*.js"
+                        sh "npm run coverage"
                     } catch (e) {
                         throw e
                     } finally {
