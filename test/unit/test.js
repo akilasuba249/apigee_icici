@@ -1,8 +1,8 @@
 const assert = require('assert');
 const request = require('request-promise');
 
-describe('Hi! API Endpoint', () => {
-    it('should return "Hi!" message', async () => {
+describe('Hello, Guest! API Endpoint', () => {
+    it('should return "Hello, Guest!" message', async () => {
         try{
             const response = await request({
                 method: 'GET',
@@ -10,7 +10,7 @@ describe('Hi! API Endpoint', () => {
                 json: true
             });
             console.log(response)
-            assert.equal(response, 'Hello !');
+            assert.equal(response, 'Hello, Guest!');
         }catch(err){
             console.log(err)
         }
