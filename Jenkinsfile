@@ -15,7 +15,6 @@ pipeline {
         }}  
         stage('Policy-Code Analysis') {
             steps {
-                //sh "npm install -g apigeelint"
                 sh "npm install -g apigeelint"
                 sh "apigeelint -s iciciproxy/apiproxy/ -f codeframe.js"
                 sh "apigeelint -s security/sharedflowbundle/ -f codeframe.js"
@@ -63,7 +62,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh "npm install request-promise"
+                        // sh "npm install request-promise"
                         sh "npm install"
                         sh "npm test test/unit/*.js"
                         sh "npm run coverage"
