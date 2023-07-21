@@ -21,11 +21,28 @@ pipeline {
 
             }
         }
+        stage('cobertura-coverage test') {
+            steps {
+                script {
+                    try {
+                       sh "npm install request-promise"
+                        sh "npm install"
+                        sh "npm test test/unit/*.js"
+                        sh "npm run coverage"
+                    } catch (e) {
+                        throw e
+                    } finally {
+                        sh "cd coverage && cp cobertura-coverage.xml $WORKSPACE"
+                        step([$class: 'CoberturaPublisher', coberturaReportFile: 'cobertura-coverage.xml'])
+                    }
+                }
+            }
+        }
 
         stage('Approval for UAT') {
             steps {
                 script {
-                    def approval = input message: 'Approve to deploy in production', ok: 'Approve'
+                    def approval = input message: 'Approve to deploy in UAT', ok: 'Approve'
                     echo "Approval: ${approval}"
                 }
             }
@@ -58,23 +75,7 @@ pipeline {
                 }
             }
         }
-        stage('Unit-Test-With-Coverage') {
-            steps {
-                script {
-                    try {
-                       sh "npm install request-promise"
-                        sh "npm install"
-                        sh "npm test test/unit/*.js"
-                        sh "npm run coverage"
-                    } catch (e) {
-                        throw e
-                    } finally {
-                        sh "cd coverage && cp cobertura-coverage.xml $WORKSPACE"
-                        step([$class: 'CoberturaPublisher', coberturaReportFile: 'cobertura-coverage.xml'])
-                    }
-                }
-            }
-        }
+
         stage('SharedFlow deployment to PROD') {
             steps {
                  // service account key from  credentials 
