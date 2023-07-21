@@ -21,7 +21,7 @@ pipeline {
 
             }
         }
-        stage('cobertura-coverage test') {
+        stage('cobertura-coverage-test') {
             steps {
                 script {
                     try {
